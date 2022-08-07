@@ -1,0 +1,64 @@
+#hackerimg {
+    opacity: 0.6;
+    filter: grayscale(80%);
+
+    /* Set rules to fill background */
+    min-height: 100%;
+    min-width: 1024px;
+        
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: auto;
+        
+    /* Set up positioning */
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.coloroverlay {
+    opacity: 0.5;
+    background-color: rgb(85, 38, 84);
+
+    /* Set rules to fill background */
+    min-height: 100%;
+    min-width: 1024px;
+        
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: auto;
+        
+    /* Set up positioning */
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.container {
+    background-color: rgb(121, 55, 75);
+    max-width: 1068px;
+    margin: auto;
+    width: 100%;
+}
+
+.maindisplay {
+    position: relative;
+    min-height: 540px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+}
+
+.icondisplay {
+    background-color: rgb(228, 51, 104);
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+    margin-top: 5rem;
+}
+
+.maintext {
+}
