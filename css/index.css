@@ -1,10 +1,9 @@
 .container {
     max-width: 1068px;
     margin: auto;
-    padding: 20px;
+    padding: 15px;
     width: 100%;
 }
-
 .mainDisplay {
     position: relative;
     min-height: 540px;
@@ -14,9 +13,8 @@
     align-items: center;
     justify-content: center;
 
-    margin-top: 5rem;
+    margin-top: 4rem;
 }
-
 .timerBox {
     display: flex;
     flex-direction: row;
@@ -31,10 +29,9 @@
 
     border-color: azure;
     border-style: solid;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     margin-bottom: 1rem;
 }
-
 .timerBox-number {
     position: relative;
     row-gap: 12px;
@@ -50,16 +47,9 @@
     font-size: 18px;
     font-weight: 400;
 }
-.timerBox-colon {
-    font-size: 48px;
-}
-
 .icondisplay {
     position: relative;
-
     font-size: 28px;
-    background-color: rgb(228, 51, 104);
-    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -67,23 +57,33 @@
     padding: 12px;
 }
 
+
+/* Font size and style */
 .firstText {
     font-weight: 900;
-    column-gap: 2px;
 }
-
 .secondText {
+    margin-top: -0.5rem;
     font-weight: 400;
 }
-
 .thirdText {
     font-size: 64px;
     column-gap: 12px;
 }
-
-#force-line-break {
-    display: none;
+.timerBox-colon {
+    font-size: 48px;
 }
+
+/* Buttons */
+
+.icondisplay a {
+    color: azure;
+}
+.icondisplay a:hover {
+    color: grey;
+}
+
+/* Breakpoints */
 @media (max-width: 800px) {
     .container {
         max-width: 600px;
