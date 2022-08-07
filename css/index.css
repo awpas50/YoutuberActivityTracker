@@ -1,38 +1,3 @@
-#hackerimg {
-    opacity: 0.6;
-    filter: grayscale(80%);
-
-    /* Set rules to fill background */
-    min-height: 100%;
-    min-width: 1024px;
-        
-    /* Set up proportionate scaling */
-    width: 100%;
-    height: auto;
-        
-    /* Set up positioning */
-    position: fixed;
-    top: 0;
-    left: 0;
-}
-
-.coloroverlay {
-    opacity: 0.5;
-    background-color: rgb(85, 38, 84);
-
-    /* Set rules to fill background */
-    min-height: 100%;
-    min-width: 1024px;
-        
-    /* Set up proportionate scaling */
-    width: 100%;
-    height: auto;
-        
-    /* Set up positioning */
-    position: fixed;
-    top: 0;
-    left: 0;
-}
 .container {
     background-color: rgb(121, 55, 75);
     max-width: 1068px;
@@ -40,25 +5,88 @@
     width: 100%;
 }
 
-.maindisplay {
+.mainDisplay {
     position: relative;
     min-height: 540px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
     margin-top: 5rem;
+}
+
+.timerBox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    height: 180px;
+    width: 60%;
+    padding: 20px;
+    column-gap: 20px;
+
+    border-color: brown;
+    border-style: solid;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.timerBox-number {
+    position: relative;
+    row-gap: 12px;
+    font-size: 64px;
+    font-weight: 900;
+}
+.timerBox-text {
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    font-weight: 400;
+}
+.timerBox-colon {
+    font-size: 48px;
 }
 
 .icondisplay {
-    background-color: rgb(228, 51, 104);
     position: relative;
+
+    font-size: 28px;
+    background-color: rgb(228, 51, 104);
+    
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: right;
-    margin-top: 5rem;
+    justify-content: center;
+    column-gap: 6px;
+    padding: 12px;
 }
 
-.maintext {
+.mainText {
+
+}
+
+.thirdText {
+    font-size: 64px;
+    column-gap: 12px;
+}
+
+#force-line-break {
+    display: none;
+}
+@media (max-width: 800px) {
+    .timerBox {
+        height: 350px;
+        width: 50%;
+    }
+    #force-line-break {
+        display: flex;
+    }
+    #middle-colon {
+        display: none;
+    }
 }
