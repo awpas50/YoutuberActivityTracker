@@ -1,29 +1,38 @@
-const youtubeKey = "AIzaSyAASD2cdA6_BLWREvJYxxVIY4u1nD9JJKg";
+const APIKey = "AIzaSyAASD2cdA6_BLWREvJYxxVIY4u1nD9JJKg";
 const youtubeUser = "UC7fk0CB07ly8oSl0aqKkqFg";
-const subCount = document.getElementById('subCount');
-const details = document.getElementById('details');
-const contentDetails = document.getElementById('contentDetails');
 
-let getContentDetails = () => {
-    fetch(`https://www.googleapis.com/youtube/v3/search?key=${youtubeKey}&channelId=${youtubeUser}&part=snippet,id&order=date&maxResults=1`)
+function UpdateCurrentTime() {
+    let currentTime = new Date().toISOString();
+    // call this function again in 500ms
+    setTimeout(UpdateCurrentTime, 500);
+    return currentTime;
+}
+function GetPreviousVideoTime() {
+    return fetch(`https://www.googleapis.com/youtube/v3/search?key=${APIKey}&channelId=${youtubeUser}&part=snippet,id&order=date&maxResults=1`)
     .then(response => {
-        return response.json()
+        if(response.ok) {
+            return response.json();
+        }
+        else {
+            console.log('Fetching failed.');
+        }
     })
     .then(data => {
         console.log(data);
+        let previousVideoTime = data['items'][0]['snippet'].publishedAt;
+        return previousVideoTime;
     })
 }
 
-// let getSubscribers = () => {
-//     fetch(`https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${youtubeUser}&key=${youtubeKey}`)
-//     .then(response => {
-//         return response.json()
-//     })
-//     .then(data => {
-//         console.log(data);
-//         subCount.innerHTML = data["items"][0].statistics.subscriberCount;
-//     })
-// }
+function CalculateTimeDifferences() {
+    let newPreviousVideoTime;
+    GetPreviousVideoTime().then((previousVideoTime) => {newPreviousVideoTime = previousVideoTime});
+    let timeDifferences = currentTime - newPreviousVideoTime;
+    console.log(timeDifferences);
+    document.getElementById('timeDifferences').innerHTML = timeDifferences;
+}
 
-getContentDetails();
-//getSubscribers();
+let currentTime = UpdateCurrentTime();
+console.log(currentTime);
+
+CalculateTimeDifferences();
